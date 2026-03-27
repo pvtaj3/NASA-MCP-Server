@@ -121,9 +121,8 @@ async def get_image_analyze(image_url: str) -> types.ImageContent:
 
 def main():
     """Main entry point for the server"""
-    # Use stdio transport for standard MCP clients (Claude Desktop, VS Code)
-    mcp.run(transport="stdio")
-    # mcp.run(transport="streamable-http")
+    # Use SSE transport for remote MCP clients
+    mcp.run(transport="sse")
 
 if __name__ == "__main__":
     main()
